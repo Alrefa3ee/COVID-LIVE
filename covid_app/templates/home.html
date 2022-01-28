@@ -96,10 +96,13 @@
         function incrementSeconds() {
             seconds += 1;
             el.innerText = seconds;
+            if(el.textContent ==120){
+              location.reload();
+            }
         }
         var cancel = setInterval(incrementSeconds, 1000);
 
-
+        
     })
 </script>
 </body>
