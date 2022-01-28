@@ -7,7 +7,7 @@ def home(request):
     response = requests.get("https://www.worldometers.info/coronavirus/")
     src = response.content
     all1 = []
-    soup = BeautifulSoup(src, "lxml")
+    soup = BeautifulSoup(src, "html.parser")
     all = soup.findAll("div",{"id":"maincounter-wrap"})
     for i in range(len(all)):
         all1.append(all[i].find("span").text)
